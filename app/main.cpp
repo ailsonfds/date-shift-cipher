@@ -14,7 +14,7 @@ int main(int argc, char* argv[]) {
 
 	std::string help("--help");
 	std::string cifrar_opt("cifrar");
-	std::string decifrar_opt("cifrar");
+	std::string decifrar_opt("decifrar");
 
 	if (argc <= 1) {
 		print_help(argv[0]);
@@ -34,7 +34,7 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 
-	cifrar cif;
+
 
 	date.erase(std::remove(date.begin(), date.end(), '/'), date.end());
 
@@ -42,6 +42,8 @@ int main(int argc, char* argv[]) {
 
 	if (cifrar_opt.compare(argv[1]) == 0) {
 		std::string output_filename(argv[4]);
+		cifrar cif;
+		
 		std::string cipher = cif.get_cipher(input_file_content, date);
 
 		std::ofstream outputfile;
@@ -52,6 +54,11 @@ int main(int argc, char* argv[]) {
 
 		return 0;
 	} else if (decifrar_opt.compare(argv[1]) == 0) {
+		decifrar decif;
+		std::string decipher = decif.decipher(input_file_content, date);
+
+		std::cout << decipher << std::endl;
+
 		return 0;
 	}
 
