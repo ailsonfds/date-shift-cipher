@@ -24,7 +24,6 @@ all : $(_DIRS) $(OBJS) $(BINAPP)
 
 $(BINAPP) : $(MAIN) $(OBJS)
 	g++ -o $@ $^ -I $(LIBDIR)
-	./$(BINAPP)
 
 $(_DIRS) :
 	mkdir -p $@
