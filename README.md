@@ -18,5 +18,5 @@ make
 * \*nix Systems
 
 ```bash
-./bin/cifrero
+./bin/cifrero --help
 ```
